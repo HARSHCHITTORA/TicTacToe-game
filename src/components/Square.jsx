@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 function square(props) {
   return (
-    <button type='button'>{props.value}</button>
+    <button type='button' className='square'>{props.value}</button>
   )
 }
 
