@@ -3,6 +3,7 @@ import Board from "./components/Board";
 import "./styles/root.scss"
 import { useState } from "react";
 import { calculateWinner } from "./helpers";
+import History from "./components/history";
 const App =()=>{
 
   // const [board,setBoard]=useState(Array(9).fill(null))
@@ -38,12 +39,16 @@ const App =()=>{
     //  setIsXNext((prev)=>!prev)
       setCurrentMove(prev=>prev+1)
   }
+  const moveTo=(move)=>{
+  setCurrentMove(move)
+  }
    return(
   <>
     <div className="app">
     <h1>Tic Tac Toe Game </h1>
     <h2>{message}</h2>
     <Board board={current.board} handleSquareClick={handleSquareClick}/>
+    <History history={history} moveTo={moveTo} currentMove={currentMove}/>
     </div>
   </>
 
