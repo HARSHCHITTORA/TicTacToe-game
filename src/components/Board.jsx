@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Square from './Square'
 
-const Board = ({board,handleSquareClick}) => {
+const Board = ({board,handleSquareClick,winningSquare}) => {
   // const [board,setBoard]=useState(Array(9).fill(null))
   // const [isXNext,setIsXNext]=useState(false)
 
@@ -26,7 +26,11 @@ const Board = ({board,handleSquareClick}) => {
   // }
   const renderSquare=(position)=>{
    
-   return( <Square value={board[position]} onClick={()=>handleSquareClick(position)}/>
+  const isWinningSquare=winningSquare.includes(position)
+
+
+   return( <Square value={board[position]} onClick={()=>handleSquareClick(position)} 
+   isWinningSquare={isWinningSquare}/>
    )
   }
   return (
