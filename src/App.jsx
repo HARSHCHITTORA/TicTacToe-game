@@ -58,11 +58,12 @@ const App =()=>{
    return(
   <>
     <div className="app">
-    <h1>Tic Tac Toe Game </h1>
+    <h1>Tic<span className="text-green"> Tac</span> Toe Game </h1>
     <Statusmessage winner={winner} current={current}/>
     {/* <h2>{message}</h2> */}
     <Board board={current.board} handleSquareClick={handleSquareClick} winningSquare={winningSquare}/>
-    <button type="button" onClick={onNewGame}>start new game</button>
+    <button type="button" onClick={onNewGame} className={`btn-reset ${winner ?'active':''}`}>start new game</button>
+    <h2>current game history</h2>
     <History history={history} moveTo={moveTo} currentMove={currentMove}/>
     </div>
   </>
